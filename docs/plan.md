@@ -102,6 +102,7 @@ Response: {"status": "healthy"}
 - [x] FastAPI backend structure
 - [x] Docker Compose configuration
 - [x] Documentation and development workflow
+- [x] Detailed frontend development setup instructions
 
 ### 🔄 Phase 2: Core Development (Next)
 **Frontend Tasks:**
@@ -134,11 +135,11 @@ Response: {"status": "healthy"}
 ```bash
 # Start full stack
 docker-compose up --build
-
-# Individual service development
-cd frontend && python app.py        # Flask dev server
-cd backend && uvicorn main:app --reload  # FastAPI dev server
 ```
+
+**Individual service development:** See comprehensive setup instructions in the main README.md:
+- Frontend (Flask): Detailed step-by-step guide with virtual environment setup
+- Backend (FastAPI): Instructions to be provided by backend team
 
 ### Team Coordination
 - **Frontend Team:** Can mock backend responses during development
@@ -227,7 +228,7 @@ docker-compose -f docker-compose.prod.yml up -d
 ## Next Steps
 
 ### Immediate (Phase 2)
-1. **Backend:** Implement `/api/price` endpoint with mock data
+1. **Backend:** Complete setup instructions and implement `/api/price` endpoint with mock data
 2. **Frontend:** Update templates to use backend API
 3. **Integration:** Test frontend-backend communication
 4. **Documentation:** API endpoint testing and examples

@@ -22,6 +22,13 @@ Stock prices full-stack application using monorepo architecture with Flask front
 - Added Docker Compose configuration for full stack
 - Updated all documentation for monorepo workflow
 
+#### Session 3: Frontend Setup Documentation (2025-09-04)
+- **Enhanced README with detailed frontend setup instructions**
+- Added comprehensive step-by-step Flask development guide
+- Included virtual environment setup, dependencies, and run instructions
+- Left backend section as placeholder for backend team to complete
+- Updated plan.md to reference detailed README instructions
+
 ### 🔄 Next: Phase 2 - Core Development
 **Frontend Tasks:**
 - Enhanced responsive templates with Chart.js
@@ -80,14 +87,14 @@ stock-prices-app/
 # Full stack development
 docker-compose up --build
 
-# Individual service development
-cd frontend && python app.py
-cd backend && uvicorn main:app --reload
-
 # Testing
 docker-compose run frontend python -m pytest
 docker-compose run backend python -m pytest
 ```
+
+**Individual service development:** See comprehensive setup instructions in the main README.md:
+- Frontend: Complete virtual environment setup, dependency installation, and run instructions
+- Backend: Instructions to be completed by backend team
 
 ### Environment Setup
 - Frontend: `.env` with Flask and API URL configuration
@@ -102,10 +109,15 @@ docker-compose run backend python -m pytest
 - WCAG 2.1 AA accessibility compliance
 
 ## Next Immediate Tasks
-1. **Backend:** Implement `/api/price` endpoint with mock data
+1. **Backend:** Complete setup documentation and implement `/api/price` endpoint with mock data
 2. **Frontend:** Update Flask routes to proxy backend API calls
 3. **Integration:** Test Docker Compose service communication
 4. **Documentation:** Add API testing examples and troubleshooting
+
+## Completed Tasks
+- ✅ Frontend development setup instructions (comprehensive README guide)
+- ✅ Virtual environment and dependency management documentation
+- ✅ Individual service development workflow
 
 ## Notes for Team
 - All services now run in Docker for consistency
