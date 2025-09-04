@@ -73,23 +73,46 @@ stock-prices-app/
 
 ### Individual Service Development
 
-#### Frontend Development
-```bash
-cd frontend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
-```
+#### Frontend Development (Flask)
+1. **Navigate to frontend directory**
+   ```bash
+   cd frontend
+   ```
 
-#### Backend Development
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
+2. **Create and activate virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+   Dependencies installed:
+   - Flask==3.0.3 (web framework)
+   - requests==2.31.0 (HTTP client)
+   - python-dotenv==1.0.1 (environment variables)
+   - gunicorn==21.2.0 (WSGI server)
+   - Werkzeug==3.0.3 (WSGI utilities)
+
+4. **Run the application**
+   ```bash
+   python app.py
+   ```
+   
+   The frontend will be available at:
+   - http://127.0.0.1:5000 (localhost)
+   - http://localhost:5000
+
+#### Backend Development (FastAPI)
+*Instructions to be provided by backend team*
+
+#### Notes
+- Frontend runs in debug/development mode by default
+- Virtual environments keep dependencies isolated  
+- Make sure to activate the virtual environment each time you work on the project
 
 ## API Endpoints
 
