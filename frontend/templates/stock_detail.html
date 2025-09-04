@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{{ symbol }} - Stock Details{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>{{ symbol }} Stock Details</h1>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+
+        <div id="stock-detail-card" class="card">
+            <div class="card-body">
+                <h5 class="card-title" id="detail-stock-name">Loading {{ symbol }}...</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="card-text">
+                            <strong>Current Price:</strong>
+                            <span class="fs-4" id="detail-stock-price">$0.00</span>
+                        </p>
+                        <p class="card-text">
+                            <strong>Change:</strong>
+                            <span id="detail-stock-change" class="badge">0.00 (0.00%)</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="card-text"><strong>Symbol:</strong> {{ symbol }}</p>
+                        <p class="card-text"><strong>Last Updated:</strong> <span id="last-updated">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetchStockData('{{ symbol }}');
+});
+</script>
+{% endblock %}
