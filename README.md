@@ -2,9 +2,12 @@
 
 A full-stack stock prices application with Flask frontend and FastAPI backend, deployed using Docker.
 
+![initial stock search home page](./stock-prices-app-home.png)
+
 ## Architecture
 
 ### Monorepo Structure
+
 ```
 stock-prices-app/
 ├── frontend/               # Flask web application
@@ -36,6 +39,7 @@ stock-prices-app/
 ```
 
 ### Services
+
 - **Frontend (Flask):** User interface on port 5000
 - **Backend (FastAPI):** REST API on port 8000
 - **Redis:** Caching layer on port 6379
@@ -43,18 +47,21 @@ stock-prices-app/
 ## Quick Start
 
 ### Prerequisites
+
 - Docker and Docker Compose
 - Git
 
 ### Development Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd stock-prices-app
    ```
 
 2. **Environment configuration**
+
    ```bash
    # Copy and configure environment files
    cp frontend/.env.example frontend/.env
@@ -62,34 +69,39 @@ stock-prices-app/
    ```
 
 3. **Start the application**
+
    ```bash
    docker-compose up --build
    ```
 
 4. **Access the application**
-   - Frontend: http://localhost:5000
-   - Backend API: http://localhost:8000
-   - API Docs: http://localhost:8000/docs
+   - Frontend: <http://localhost:5000>
+   - Backend API: <http://localhost:8000>
+   - API Docs: <http://localhost:8000/docs>
 
 ### Individual Service Development
 
 #### Frontend Development (Flask)
+
 1. **Navigate to frontend directory**
+
    ```bash
    cd frontend
    ```
 
 2. **Create and activate virtual environment**
+
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. **Install dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
-   
+
    Dependencies installed:
    - Flask==3.0.3 (web framework)
    - requests==2.31.0 (HTTP client)
@@ -98,18 +110,21 @@ stock-prices-app/
    - Werkzeug==3.0.3 (WSGI utilities)
 
 4. **Run the application**
+
    ```bash
    python app.py
    ```
-   
+
    The frontend will be available at:
-   - http://127.0.0.1:5000 (localhost)
-   - http://localhost:5000
+   - <http://127.0.0.1:5000> (localhost)
+   - <http://localhost:5000>
 
 #### Backend Development (FastAPI)
+
 *Instructions to be provided by backend team*
 
 #### Notes
+
 - Frontend runs in debug/development mode by default
 - Virtual environments keep dependencies isolated  
 - Make sure to activate the virtual environment each time you work on the project
@@ -117,6 +132,7 @@ stock-prices-app/
 ## API Endpoints
 
 ### Backend (FastAPI)
+
 - `GET /api/price?symbol={symbol}` - Current stock price
 - `GET /api/company?symbol={symbol}` - Company information
 - `GET /api/historical?symbol={symbol}&start={date}&end={date}` - Historical data
@@ -125,6 +141,7 @@ stock-prices-app/
 - `GET /health` - Health check
 
 ### Frontend (Flask)
+
 - `GET /` - Main dashboard
 - `GET /company/<symbol>` - Company detail page
 - `GET /trending` - Top movers page
@@ -142,6 +159,7 @@ stock-prices-app/
 ## Development Commands
 
 ### Docker Commands
+
 ```bash
 # Development environment
 docker-compose up --build
@@ -157,6 +175,7 @@ docker-compose logs -f [service-name]
 ```
 
 ### Testing
+
 ```bash
 # Frontend tests
 cd frontend && python -m pytest tests/
@@ -174,6 +193,7 @@ docker-compose run backend python -m pytest
 ### Environment Variables
 
 #### Frontend (.env)
+
 ```env
 SECRET_KEY=your-secret-key
 FLASK_DEBUG=True
@@ -181,6 +201,7 @@ STOCK_API_URL=http://localhost:8000
 ```
 
 #### Backend (.env)
+
 ```env
 API_DEBUG=True
 ALPHA_VANTAGE_API_KEY=your-api-key
@@ -188,6 +209,7 @@ REDIS_URL=redis://localhost:6379
 ```
 
 ## Performance Requirements
+
 - **Frontend load time:** <4s cached, <6s uncached (p95)
 - **API response time:** <2s cached, <5s fresh data
 - **Browser support:** Chrome, Edge, Firefox, Safari
@@ -196,6 +218,7 @@ REDIS_URL=redis://localhost:6379
 ## Deployment
 
 ### Production Deployment
+
 ```bash
 # Deploy with production configuration
 docker-compose -f docker-compose.prod.yml up -d
@@ -205,8 +228,9 @@ docker-compose -f docker-compose.prod.yml up -d --scale backend=3
 ```
 
 ### Health Monitoring
-- Frontend health: http://localhost:5000/health
-- Backend health: http://localhost:8000/health
+
+- Frontend health: <http://localhost:5000/health>
+- Backend health: <http://localhost:8000/health>
 - Redis health: `docker-compose exec redis redis-cli ping`
 
 ## Contributing
